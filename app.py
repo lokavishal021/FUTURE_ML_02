@@ -168,6 +168,10 @@ if menu == "Dashboard & Training":
     st.markdown("### Data Overview")
     tab_data, tab_analysis = st.tabs(["📄 Data Preview", "📈 Data Analysis"])
     with tab_data:
+        # Fix for LargeUtf8 error: convert all object columns to standard python strings
+        if not df.empty:
+            for col in df.select_dtypes(include=['object', 'string']).columns:
+                df[col] = df[col].astype(str)
         st.dataframe(df.head(), use_container_width=True)
         st.caption(f"Total Tickets: {len(df)} | Columns: {list(df.columns)}")
     
