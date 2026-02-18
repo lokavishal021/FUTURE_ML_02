@@ -1,4 +1,5 @@
-pandas
+pandas<2.2
+pyarrow
 numpy
 scikit-learn
 nltk
