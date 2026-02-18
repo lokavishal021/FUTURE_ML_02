@@ -1,6 +1,6 @@
 pandas<2.2
 pyarrow
-numpy
+numpy<2
 scikit-learn
 nltk
 seaborn
