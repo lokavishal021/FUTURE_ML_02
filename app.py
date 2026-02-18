@@ -167,6 +167,7 @@ if menu == "Dashboard & Training":
     # Data Overview
     st.markdown("### Data Overview")
     tab_data, tab_analysis = st.tabs(["📄 Data Preview", "📈 Data Analysis"])
+    with tab_data:
         # Fix for LargeUtf8 error: convert ENTIRE dataframe to string for display stability in Streamlit Cloud
         st.dataframe(df.head().astype(str), use_container_width=True)
         st.caption(f"Total Tickets: {len(df)} | Columns: {list(df.columns)}")
