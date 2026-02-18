@@ -10,3 +10,4 @@ pillow
 wordcloud
 plotly
 altair<5
+standard-imghdr
